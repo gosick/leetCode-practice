@@ -19,7 +19,7 @@ $solution = new Solution\Solution();
 // $nodeArray = [1, 1, 1, 1, 1, null, 1];
 // $nodeArray = [2,2,2,5,2];
 // $nodeArray = [1];
-// $node = $solution->buildTree($nodeArray);
-// $result = $solution->isUnivalTree($node);
+// $tree = new Solution\BinaryTree($nodeArray);
+// $result = $solution->isUnivalTree($tree->getTreeNode());
 
 // var_dump($result);
