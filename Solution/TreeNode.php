@@ -1,5 +1,7 @@
 <?php
 
+namespace Solution;
+
 class TreeNode
 {
     public $val = null;

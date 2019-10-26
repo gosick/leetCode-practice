@@ -1,6 +1,8 @@
 <?php
 
-require('./TreeNode.php');
+namespace Solution;
+
+use Solution\TreeNode;
 
 class Solution
 {

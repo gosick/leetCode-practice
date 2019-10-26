@@ -1,8 +1,8 @@
 <?php
 
-require('./Solution.php');
+include_once __DIR__ . '../../autoload.php';
 
-$solution = new Solution();
+$solution = new Solution\Solution();
 
 // $word = ['hello', 'world', 'leetcode'];
 // $chars = 'welldonehoneyr';
@@ -22,4 +22,4 @@ $solution = new Solution();
 // $node = $solution->buildTree($nodeArray);
 // $result = $solution->isUnivalTree($node);
 
-var_dump($result);
+// var_dump($result);
