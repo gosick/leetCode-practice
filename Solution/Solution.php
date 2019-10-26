@@ -133,4 +133,72 @@ class Solution
         return $this->isUnivalTree($root->left) && $this->isUnivalTree($root->right);
     }
 
+    /**
+     * leetCode #922
+     * sortArrayByParityII
+     *
+     * @param  mixed $a
+     *
+     * @return array
+     */
+    public function sortArrayByParityII(array $a) : array
+    {
+        $result = [];
+        $count = 0;
+        $count2 = 1;
+        foreach ($a as $value) {
+            
+            if ($value % 2 === 0) {
+                $result[$count] = $value;
+                $count += 2;
+            } else {
+                $result[$count2] = $value;
+                $count2 += 2;
+            }
+        }
+
+        ksort($result);
+        return $result;
+    }
+
+    /**
+     * leetCode #509
+     * fib
+     *
+     * @param  int $n
+     *
+     * @return int
+     */
+    public function fib(int $n) : int
+    {
+        // method 1
+        if ($n <= 1) {
+            return $n;
+        }
+        return $this->fib($n - 1) + $this->fib($n - 2);
+
+        // method 2
+        // if ($n < 0) {
+        //     return $n;
+        // }
+        // $temp = [];
+        // array_push($temp, 0, 1);
+        // for ($i = 2; $i <= $n; $i++) {
+        //     $temp[$i] = $temp[$i - 1] + $temp[$i - 2];
+        // }
+        // return $temp[$n];
+    }
+
+    /**
+     * leetCode #883
+     * projectionArea
+     *
+     * @param  mixed $grid
+     *
+     * @return int
+     */
+    public function projectionArea(array $grid) : int
+    {
+
+    }
 }

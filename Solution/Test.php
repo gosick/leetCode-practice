@@ -22,4 +22,12 @@ $solution = new Solution\Solution();
 // $tree = new Solution\BinaryTree($nodeArray);
 // $result = $solution->isUnivalTree($tree->getTreeNode());
 
-// var_dump($result);
+// $sortInput = [4, 2, 5, 7];
+// $result = $solution->sortArrayByParityII($sortInput);
+
+// $fibInput = 6;
+// $result = $solution->fib($fibInput);
+
+$input = [[1, 2], [3, 4]];
+$result = $solution->projectionArea($input);
+var_dump($result);
