@@ -28,6 +28,12 @@ $solution = new Solution\Solution();
 // $fibInput = 6;
 // $result = $solution->fib($fibInput);
 
-$input = [[1, 2], [3, 4]];
-$result = $solution->projectionArea($input);
-var_dump($result);
+// $input = [[2]];
+// $input = [[1, 2], [3, 4]];
+// $input = [[1, 0], [0, 2]];
+// $input = [[2, 2, 2], [2, 1, 2], [2, 2, 2]];
+// $input = [[1, 1, 1], [1, 0, 1], [1, 1, 1]];
+// $input = [[4, 0, 4], [4, 2, 4], [4, 4, 1]];
+// $result = $solution->projectionArea($input);
+
+// var_dump($result);

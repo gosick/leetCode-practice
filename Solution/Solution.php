@@ -200,5 +200,33 @@ class Solution
     public function projectionArea(array $grid) : int
     {
 
+        $input = [[1,1,1],[1,0,1],[1,1,1]];// 高面 1+1+1 長面3x3 寬面max(1+1+1, 1+0+1, 1+1+1)
+        // length 3 X 3 = 9 - 1
+        // width 1+1+1, 1+0+1, 1+1+1
+        // height max(3, 2, 3) = 3
+        // 0,0: 1; 0,1: 1, 0,2: 1
+        // 1,0: 1; 1,1: 0, 1,2: 1
+        // 2,0: 1; 2,1: 1, 2,2: 1
+        // xy = 9  yz = 3 xz 
+
+        // max(5 + 0 + 4, 4 + 2 + 4, 4 + 4 + 1) => max(9, 10, 9)
+        // max(5 + 4 + 4, 0 + 2 + 4, 4 + 4 + 1) => max(13, 6, 9)
+        $rows = count($grid);
+        $cols = $rows;
+        $maxLength = $rows * $cols;
+        for ($i = 0; $i < $rows; $i++) {
+            $width = 0;
+            $height = 0;
+            for ($j = 0; $j < $cols; $j++) {
+                if ($grid[$i][$j] === 0) {
+                    $maxLength--;
+                }
+                $width = max($width, $grid[$j][$i]);
+                $height = max($height, $grid[$i][$j]);
+            }
+            $result += $width + $height;
+        }
+        
+        return $result + $maxLength;
     }
 }
