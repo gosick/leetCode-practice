@@ -36,4 +36,6 @@ $solution = new Solution\Solution();
 // $input = [[4, 0, 4], [4, 2, 4], [4, 4, 1]];
 // $result = $solution->projectionArea($input);
 
+// $inputArray = [3, 8, -10, 23, 19, -4, -14, 27];
+// $result = $solution->minimumAbsDifference($inputArray);
 // var_dump($result);

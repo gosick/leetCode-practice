@@ -199,18 +199,6 @@ class Solution
      */
     public function projectionArea(array $grid) : int
     {
-
-        $input = [[1,1,1],[1,0,1],[1,1,1]];// 高面 1+1+1 長面3x3 寬面max(1+1+1, 1+0+1, 1+1+1)
-        // length 3 X 3 = 9 - 1
-        // width 1+1+1, 1+0+1, 1+1+1
-        // height max(3, 2, 3) = 3
-        // 0,0: 1; 0,1: 1, 0,2: 1
-        // 1,0: 1; 1,1: 0, 1,2: 1
-        // 2,0: 1; 2,1: 1, 2,2: 1
-        // xy = 9  yz = 3 xz 
-
-        // max(5 + 0 + 4, 4 + 2 + 4, 4 + 4 + 1) => max(9, 10, 9)
-        // max(5 + 4 + 4, 0 + 2 + 4, 4 + 4 + 1) => max(13, 6, 9)
         $rows = count($grid);
         $cols = $rows;
         $maxLength = $rows * $cols;
@@ -228,5 +216,35 @@ class Solution
         }
         
         return $result + $maxLength;
+    }
+
+    /**
+     * leetCode #1200
+     * minimumAbsDifference
+     *
+     * @param  array $arr
+     *
+     * @return array
+     */
+    public function minimumAbsDifference(array $arr) : array
+    {
+        sort($arr);
+        $length = count($arr);
+        $result = [];
+        $min = $arr[$length - 1] - $arr[0];
+
+        foreach ($arr as $key => $value) {
+            if ($key >= $length - 1) {
+                break;
+            }
+            if ($arr[$key + 1] - $value < $min) {
+                $min = $arr[$key + 1] - $value;
+                $result = [];
+                $result[] = [$value, $arr[$key + 1]];
+            } elseif ($arr[$key + 1] - $value === $min) {
+                $result[] = [$value, $arr[$key + 1]];
+            }
+        }
+        return $result;
     }
 }
