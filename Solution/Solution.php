@@ -247,4 +247,54 @@ class Solution
         }
         return $result;
     }
+
+    /**
+     * leetCode #1122
+     * relativeSortArray
+     *
+     * @param  array $arr1
+     * @param  array $arr2
+     *
+     * @return array
+     */
+    public function relativeSortArray(array $arr1, array $arr2) : array
+    {
+        $length1 = count($arr1);
+        $length2 = count($arr2);
+        $temp = $arr2;
+
+        for ($i = 0; $i < $length1; $i++) {
+
+            if (!empty($temp)) {
+                $key = array_search($arr1[$i], $temp);
+                if ($key !== false) {
+                    unset($temp[$key]);
+                    unset($arr1[$i]);
+                }  
+            }
+        }
+
+        sort($arr1);
+        foreach ($arr1 as $value) {
+            $key = array_search($value, $arr2);
+            if ($key !== false) {
+
+                for ($i = $length2;; $i--) {
+
+                    if ($i === $key + 1) {
+                        $arr2[$i] = $value;
+                        break;
+                    } else {
+                        $arr2[$i] = $arr2[$i - 1];
+                    }
+                }
+                $length2++;
+            } else {
+                $arr2[] = $value;
+                $length2++;
+            }
+        }
+
+        return $arr2;
+    }
 }

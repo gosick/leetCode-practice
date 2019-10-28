@@ -38,4 +38,10 @@ $solution = new Solution\Solution();
 
 // $inputArray = [3, 8, -10, 23, 19, -4, -14, 27];
 // $result = $solution->minimumAbsDifference($inputArray);
-// var_dump($result);
+
+//$arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19];
+//$arr2 = [2, 1, 4, 3, 9, 6];
+// $arr1 = [3, 19, 7, 29, 5, 17, 49, 45, 31, 44];
+// $arr2 = [7, 3, 5, 29, 19];
+// $result = $solution->relativeSortArray($arr1, $arr2);
+var_dump($result);
