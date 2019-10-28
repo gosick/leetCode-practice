@@ -44,4 +44,42 @@ $solution = new Solution\Solution();
 // $arr1 = [3, 19, 7, 29, 5, 17, 49, 45, 31, 44];
 // $arr2 = [7, 3, 5, 29, 19];
 // $result = $solution->relativeSortArray($arr1, $arr2);
-var_dump($result);
+
+
+// $caseJson =
+// '{
+//     "id":"1",
+//     "children":[
+//         {
+//             "id":"2",
+//             "children":[
+//                 {
+//                     "id":"5",
+//                     "children":[],
+//                     "val":5
+//                 },
+//                 {
+//                     "id":"6",
+//                     "children":[],
+//                     "val":6
+//                 }
+//             ],
+//             "val":3
+//         },
+//         {
+//             "id":"3",
+//             "children":[],
+//             "val":2
+//         },
+//         {
+//             "id":"4",
+//             "children":[],
+//             "val":4
+//         }
+//     ],
+//     "val":1
+// }';
+
+// $tree = new Solution\DeepTree($caseJson);
+// $result = $solution->maxDepth($tree->getRoot());
+//  var_dump($result);

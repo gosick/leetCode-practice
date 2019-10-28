@@ -3,6 +3,7 @@
 namespace Solution;
 
 use Solution\TreeNode;
+use Solution\Node;
 
 class Solution
 {
@@ -296,5 +297,29 @@ class Solution
         }
 
         return $arr2;
+    }
+
+    /**
+     * leetCode #559
+     * maxDepth
+     *
+     * @param  Node|null $root
+     *
+     * @return int
+     */
+    public function maxDepth(Node $root = null) : int
+    {
+        if ($root === null) {
+            return 0;
+        } elseif (empty($root->children)) {
+            return 1;
+        } else {
+            $sum = 0;
+            foreach ($root->children as $key => $value) {
+                $depth = $this->maxDepth($value);
+                $sum = max($depth, $sum);
+            }
+            return $sum + 1;
+        }
     }
 }
