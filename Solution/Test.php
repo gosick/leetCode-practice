@@ -20,7 +20,7 @@ $solution = new Solution\Solution();
 // $nodeArray = [2,2,2,5,2];
 // $nodeArray = [1];
 // $tree = new Solution\BinaryTree($nodeArray);
-// $result = $solution->isUnivalTree($tree->getTreeNode());
+// $result = $solution->isUnivalTree($tree->root);
 
 // $sortInput = [4, 2, 5, 7];
 // $result = $solution->sortArrayByParityII($sortInput);
@@ -83,3 +83,9 @@ $solution = new Solution\Solution();
 // $tree = new Solution\DeepTree($caseJson);
 // $result = $solution->maxDepth($tree->getRoot());
 //  var_dump($result);
+
+$node = [5, 3, 6, 2, 4, null, 8, 1, null, null, null, 7, 9];
+$node = [1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null];
+$tree = new Solution\BinaryTree($node);
+$result = $solution->increasingBST($tree->root);
+var_dump($result);

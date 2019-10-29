@@ -322,4 +322,17 @@ class Solution
             return $sum + 1;
         }
     }
+
+    /**
+     * leetCode #897
+     * increasingBST
+     *
+     * @param  mixed $root
+     *
+     * @return TreeNode
+     */
+    public function increasingBST(TreeNode $root) : TreeNode
+    {
+        return $root;
+    }
 }

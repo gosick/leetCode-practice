@@ -11,6 +11,8 @@ class BinaryTree
      */
     private $node;
 
+    public $root;
+
     /**
      * __construct
      *
@@ -20,17 +22,9 @@ class BinaryTree
      */
     public function __construct(array $nodes)
     {
-        $this->node = $this->buildTree($nodes);
-    }
-
-    /**
-     * getTreeNode
-     *
-     * @return TreeNode
-     */
-    public function getTreeNode() : TreeNode
-    {
-        return $this->node;
+        $this->root = new TreeNode(array_shift($nodes));
+        $this->buildTree($nodes);
+        // $this->node = $this->buildTree($nodes);
     }
 
     /**
@@ -38,85 +32,42 @@ class BinaryTree
      *
      * @param  array $nodes
      *
-     * @return TreeNode
+     * @return void
      */
-    public function buildTree(array $nodes) : TreeNode
+    public function buildTree(array $nodes)
     {
-        $tree = $this->treeCount($nodes);
-        $temp = [];
-        for ($i = 0; $i < $tree['depth']; $i++) {
-            $temp[] = array_slice($nodes, $tree['count'][$i] - 1, $tree['count'][$i]);
-        }
+        $current = $this->root;
+        $store = [];
+        $defaultVal = null;
 
-        $root = null;
-        $currentNode = [];
-        $result = null;
-        for ($i = 0; $i < $tree['depth']; $i++) {
-            if ($i === 0) {
-                $root = new TreeNode($temp[0][$i]);
-                $currentNode[] = $root;
-            } else {
+        while (true) {
 
-                foreach ($currentNode as &$item) {
-                    if (!empty($temp[$i])) {
-                        $nodeValue = array_shift($temp[$i]);
-                        $item->left = (is_null($nodeValue)) ? null : new TreeNode($nodeValue);
-                        $nodeValue = array_shift($temp[$i]);
-                        $item->right = (is_null($nodeValue)) ? null : new TreeNode($nodeValue);
-                    }
-                }
-
-                if ($i !== $tree['depth'] - 1) {
-                    $currentNode = $this->getNodesByDepth($currentNode);
-                }
+            $value = array_shift($nodes);
+            if ($value !== null) {
+                $newNode = new TreeNode($value);
+                // $newNode->parent = $current;
+                $current->left = $newNode;
+                $store[] = $newNode;
             }
 
+            if (empty($nodes)) {
+                break;
+            }
+
+            $value = array_shift($nodes);
+            if ($value !== null) {
+                $newNode = new TreeNode($value);
+                // $newNode->parent = $current;
+                $current->right = $newNode;
+                $store[] = $newNode;
+            }
+
+            if (!empty($nodes)) {
+                $current = $store[0];
+                array_shift($store);
+            } else {
+                break;
+            }
         }
-
-        return $root;
-    }
-
-    /**
-     * getNodesByDepth
-     *
-     * @param  array $nodes
-     *
-     * @return array
-     */
-    public function getNodesByDepth(array $nodes) : array
-    {
-        $result = [];
-
-        for ($i = 0; $i < count($nodes); $i++) {
-            $result[] = $nodes[$i]->left;
-            $result[] = $nodes[$i]->right;
-        }
-        return $result;
-    }
-
-    /**
-     * treeCount
-     *
-     * @param  array $list
-     *
-     * @return array
-     */
-    public function treeCount(array $list) : array
-    {
-        $total = count($list);
-        $times = 0;
-        $i = ($total % 2 === 0) ? 1 : 0;
-        
-        $tree = [
-            'depth' => 0,
-            'count' => []
-        ];
-        while ($total > 0) {
-            $tree['count'][] = pow(2, $i);
-            $total -= pow(2, $i);
-            $tree['depth']++;
-            $i++;
-        }
-        return $tree;
     }
 }
