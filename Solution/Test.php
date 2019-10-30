@@ -84,8 +84,7 @@ $solution = new Solution\Solution();
 // $result = $solution->maxDepth($tree->getRoot());
 //  var_dump($result);
 
-$node = [5, 3, 6, 2, 4, null, 8, 1, null, null, null, 7, 9];
-$node = [1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null];
-$tree = new Solution\BinaryTree($node);
-$result = $solution->increasingBST($tree->root);
-var_dump($result);
+// $node = [5, 3, 6, 2, 4, null, 8, 1, null, null, null, 7, 9];
+// $tree = new Solution\BinaryTree($node);
+// $result = $solution->increasingBST($tree->root);
+// var_dump($result);

@@ -4,6 +4,7 @@ namespace Solution;
 
 use Solution\TreeNode;
 use Solution\Node;
+use Solution\BinaryTree;
 
 class Solution
 {
@@ -333,6 +334,7 @@ class Solution
      */
     public function increasingBST(TreeNode $root) : TreeNode
     {
-        return $root;
+        $tree = new BinaryTree(null);
+        return $tree->inOrderByParent($root);
     }
 }

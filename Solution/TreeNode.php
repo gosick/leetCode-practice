@@ -4,7 +4,7 @@ namespace Solution;
 
 class TreeNode
 {
-    // public $parent = null;
+    public $parent = null;
     public $val = null;
     public $left = null;
     public $right = null;
