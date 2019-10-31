@@ -88,3 +88,60 @@ $solution = new Solution\Solution();
 // $tree = new Solution\BinaryTree($node);
 // $result = $solution->increasingBST($tree->root);
 // var_dump($result);
+
+$input = ['bella', 'label', 'roller'];
+$input = ['cool', 'lock', 'cook'];
+$input = [
+    'afcgfbfcdeefhgcaaccgbcehehfbjfgfjacjijibfejjbggbfc',
+    'ceiiahidafgdhgcjibjgejhgfifcagiheifdgedidbbgagbiga',
+    'hejafbagbagiaheefibiafiigjjdjcfdhcffgiccecgbghcgcd',
+    'cdigjbeecehjgjhjgdaedbcddbhjaaidfjdfadibgjhfhahjhj',
+    'gcchbbdhcfiefdhcccdbjfhdgcfifhjhefcibdghafhcifajbh',
+    'gehjcigdbcbjfehcgdgbeadeejdiaieajhfgadfjfdieecbiie',
+    'jfihiccdidbaefbgjadgdgejifjhbaciafhjcdjcgabadhdeai',
+    'igbgdcaiicegacfhaijfjgaadafadcdcjhjdidiebfiefbfgic',
+    'giibgegaeiciffjgbadbaefdgabfajffbbgccdahiiaccjejji',
+    'abigijhajicjahfhchicfhabhgeeagcgiecfbfjhahhhhhbdjf',
+    'bceigabhbhcdjdifdaeedgigicffficajhiiggejfceeabgbcb',
+    'bcicijaeihjhfgbhihddafhcjgfhgafgeacchaaddjccjbfaah',
+    'bcaighaabjcifcgiiehbadiihbabhddfijjafdbebdjgbecafg',
+    'dbbjaehcfddgbegbhejccaebacfdaefaaieeghicijjagebejc',
+    'cfcfegcbbdiaejebbacbccbecbdeagbdgiigjcddbbhghgijfb',
+    'jfdhgecfbbfciffajaeehecdfdbificfabebdbdcjeigeejaej',
+    'jdedfebhhgdbbbgbhbfdifcedcgbfjaiiajfcgdbigbaffeeef',
+    'ejdfbhhibgdhdbbjdbhbhdbghahfageggdchjfjebbihcgffhg',
+    'hgdicjjgbihheeghfdcabhhhbdefaifigjfgeiajagbdibiaec',
+    'fbbddgceaigbfhcabahffcjhaiihggjjcgeiedacaiehggeafi',
+    'hhdgbbdcdbbjgjgjfggffbedfgjdhjifccdaeihdgahjdcghjf',
+    'hjdbbjbjaahjfjjbiajdcfbiiaaeehdfhgaeiihjedddhcjhad',
+    'beeafaagajchjdeehgijfaegigfcjidifgcjffhgcghdjieggj',
+    'cihafeibdhhcffjcifjhaggjhjbcdejffighcaddiagghegebd',
+    'gcebaedchchfefgibgbagfabihcjdhbhbhaccdehjjgbfdgjdd',
+    'fdgijfbibbfbagehddbbadhaaeaafjcacaccgbegcfejebbhdj',
+    'fgihbhbcfgbjcjbaihjbfajdjgdjgjifhecfbfigafedcfdcgd',
+    'egagahjdfcggchabfcdadjgbeggaghaaigggihfhjbgbbaefbe',
+    'ccgjebiicbbfcadffgbjhjibceageejibfgdghdececcchabdh',
+    'fddhfieefafegchcbihidgjgdjfhcajbgibjhaahefdcihbhdj',
+    'fbiajdfebhdbdijjgcacjdgjjafbgebcchigbfhigigdfgdaai',
+    'gfjgdfigcfcdjbcdfegeebcgicjdcebdhafecachbebghbhebg',
+    'jajbgihaaeabchfgdaijiehajcbcgabcahigdcdfdgejbghhdi',
+    'dbijdgfjgbbcihcdijbgdgehhaihibbhhejigbjbafiieedbac',
+    'geehiihebaiejcbbadicihgeifficfjaeibahebecjafahefjb',
+    'cdecbhibjgahjfhibebijgcbfggidiedcaefdgcjcafgjiefjd',
+    'iahghibjaehgghibhdjgjhidbhjdicchgdhcjhabajchbafjaj',
+    'ehgejcgajiecifgihafjibbjccigfdafeeigbhbdajdedejfhc',
+    'gdaefffedceiadjhefebaigicefjhdaifghbddgfccfafdfddd',
+    'gadhiabdbbdeebgchfijhbhhbbhbgcdbaaebegecehigihdihg',
+    'hgcdjcifjhhhcabdjbghjfcjiicjidhffhcfcgjgjaidgghijb',
+    'aedbebggbegifjdbiiggjbgfhghbgcdfbidfehbgehjhdhcbae',
+    'ebicdgciedcghghhcfffdhciagejccadjfdfjdacjafjbfbiff',
+    'bjeheechdbaihbacifaegiaiigjecheiaebchegjibdgfhcfac',
+    'hjdjcjdbehdejfifediccbfajadeddfijfahbdgfihbcffehic',
+    'ggihchfgieidfaabegibbjcibeefegjgiibbaggahghgaaeaag',
+    'ghgbbdfgdaaehhjcbiajbiejceeiiaeghhdiefdecjbfifehgc',
+    'ehfdicgbffbiegjabdffeeddejbfhfdfjfchbedfdeajibbdcg',
+    'cdffadffchiiihbiihccgbbaejafbbdijgabdbfifiajbeaeea',
+    'jgddbffdiebeadgchfcbbehihabjjdegfbdbajdacjhhidabbd'
+];
+$result = $solution->commonChars($input);
+var_dump($result);exit;

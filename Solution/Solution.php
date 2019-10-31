@@ -337,4 +337,35 @@ class Solution
         $tree = new BinaryTree(null);
         return $tree->inOrderByParent($root);
     }
+
+    /**
+     * leetCode 1002
+     * commonChars
+     *
+     * @param  mixed $A
+     *
+     * @return void
+     */
+    public function commonChars($A)
+    {    
+        $start = str_split($A[0]);
+        for ($i = 1; $i < count($A); $i++) {
+
+            $temp = str_split($A[$i]);
+            $start = array_filter($start, function ($item) use (&$temp, $i) {
+                $search =  array_search($item, $temp);
+
+                if ($search !== false) {
+                    $temp[$search] = '';
+                    return true;
+                } else {
+                    return false;
+                }
+                return $search === false ? false : $temp[$search] = '';
+            });
+            
+        }
+        sort($start);
+        return $start;
+    }
 }
