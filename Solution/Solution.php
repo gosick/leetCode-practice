@@ -328,7 +328,7 @@ class Solution
      * leetCode #897
      * increasingBST
      *
-     * @param  mixed $root
+     * @param  TreeNode $root
      *
      * @return TreeNode
      */
@@ -342,11 +342,11 @@ class Solution
      * leetCode 1002
      * commonChars
      *
-     * @param  mixed $A
+     * @param  array $A
      *
-     * @return void
+     * @return array
      */
-    public function commonChars($A)
+    public function commonChars(array $A) : array
     {    
         $start = str_split($A[0]);
         for ($i = 1; $i < count($A); $i++) {
@@ -367,5 +367,92 @@ class Solution
         }
         sort($start);
         return $start;
+    }
+
+    /**
+     * leetCode #999
+     * numRookCaptures
+     *
+     * @param  mixed $board
+     *
+     * @return void
+     */
+    public function numRookCaptures(array $board)
+    {
+        // R . B p uppercase represent white pieces and lowercase represent black pieces
+        // R rook, B bishop, p pawns
+
+        $findRookPosition = function ($board) {
+            foreach ($board as $rowKey => $row) {
+                $search = array_search('R', $row);
+                if ($search !== false) {
+                    return [
+                        'x' => $rowKey,
+                        'y' => $search
+                    ];
+                }
+            }
+        };
+
+        $capture = 0;
+        // to Rook top
+        $moveUp = function ($board, $wRook) use (&$capture) {
+            for ($i = $wRook['x'] - 1; $i >= 0; $i--) {
+                $piece = $board[$i][$wRook['y']];
+                if ($piece === '.') {
+                    continue;
+                } elseif ($piece === 'p') {
+                    $capture++;
+                }
+                break;
+            }
+        };
+
+        // to Rook down
+        $moveDown = function ($board, $wRook) use (&$capture) {
+            for ($i = $wRook['x'] + 1; $i <= 7; $i++) {
+                $piece = $board[$i][$wRook['y']];
+                if ($piece === '.') {
+                    continue;
+                } elseif ($piece === 'p') {
+                    $capture++;
+                }
+                break;
+            }
+        };
+
+        // to Rook left
+        $moveLeft = function ($board, $wRook) use (&$capture) {
+            for ($i = $wRook['y'] - 1; $i >= 0; $i--) {
+                $piece = $board[$wRook['x']][$i];
+                if ($piece === '.') {
+                    continue;
+                } elseif ($piece === 'p') {
+                    $capture++;
+                }
+                break;
+            }
+        };
+
+        // to Rook right
+        $moveRight = function ($board, $wRook) use (&$capture) {
+            for ($i = $wRook['y'] + 1; $i <= 7; $i++) {
+                $piece = $board[$wRook['x']][$i];
+                if ($piece === '.') {
+                    continue;
+                } elseif ($piece === 'p') {
+                    $capture++;
+                }
+                break;
+            }
+        };
+
+        $wRook = $findRookPosition($board);
+        $moveUp($board, $wRook);
+        $moveLeft($board, $wRook);
+        $moveDown($board, $wRook);
+        $moveRight($board, $wRook);
+
+        return $capture;
     }
 }
