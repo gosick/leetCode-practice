@@ -181,3 +181,7 @@ $solution = new Solution\Solution();
 
 // $result = $solution->numRookCaptures($input);
 // var_dump($result);exit;
+
+$num = 8;
+$result = $solution->divisorGame($num);
+var_dump($result);
