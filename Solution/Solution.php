@@ -373,11 +373,11 @@ class Solution
      * leetCode #999
      * numRookCaptures
      *
-     * @param  mixed $board
+     * @param  array $board
      *
-     * @return void
+     * @return int
      */
-    public function numRookCaptures(array $board)
+    public function numRookCaptures(array $board) : int
     {
         // R . B p uppercase represent white pieces and lowercase represent black pieces
         // R rook, B bishop, p pawns
@@ -454,5 +454,54 @@ class Solution
         $moveRight($board, $wRook);
 
         return $capture;
+    }
+
+    /**
+     * leetCode #1025
+     * divisorGame
+     *
+     * @param  int $N
+     *
+     * @return bool
+     */
+    public function divisorGame(int $N) : bool
+    {
+        if ($N <= 1) {
+            return false;
+        }
+        
+        $move = 0;
+        while ($N > 1) {
+            for ($i = 1; $i < $N; $i++) {
+                if ($N % $i === 0)  {
+                    $N -= $i; 
+                    $move += 1;
+                    break;
+                }
+            }            
+        }
+        
+        return ($move % 2 === 1) ? true : false;
+    }
+
+    /**
+     * leetCode #1047
+     * removeDuplicates
+     *
+     * @param  mixed $s
+     *
+     * @return string
+     */
+    public function removeDuplicates(string $s) : string
+    {
+        $end = -1;
+        for ($i = 0; $i < strlen($s); $i++) {
+            if (0 <= $end && $s[$end] === $s[$i]) {
+                $end--;
+            } else {
+                $s[++$end] = $s[$i];
+            }
+        }
+        return substr($s, 0, $end + 1);
     }
 }

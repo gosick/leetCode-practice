@@ -182,6 +182,10 @@ $solution = new Solution\Solution();
 // $result = $solution->numRookCaptures($input);
 // var_dump($result);exit;
 
-$num = 8;
-$result = $solution->divisorGame($num);
+// $num = 8;
+// $result = $solution->divisorGame($num);
+// var_dump($result);
+
+$input = 'abbaca';
+$result = $solution->removeDuplicates($input);
 var_dump($result);
