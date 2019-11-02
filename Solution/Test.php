@@ -224,3 +224,7 @@ $solution = new Solution\Solution();
 // $input3 = 'will';
 // $result = $solution->findOcurrences($input1, $input2, $input3);
 // var_dump($result);
+
+$input = ['h', 'e', 'l', 'l', 'o'];
+$solution->reverseString($input);
+var_dump($input);

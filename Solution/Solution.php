@@ -576,7 +576,7 @@ class Solution
      *
      * @return array
      */
-    function findOcurrences(string $text, string $first, string $second) : array
+    public function findOcurrences(string $text, string $first, string $second) : array
     {
         $input = explode(' ', $text);
         $result = [];
@@ -587,5 +587,18 @@ class Solution
             }
         }
         return $result;
+    }
+
+    /**
+     * leetCode #344
+     * reverseString
+     *
+     * @param  string $s
+     *
+     * @return void
+     */
+    public function reverseString(&$s)
+    {
+        $s = array_reverse($s);
     }
 }
