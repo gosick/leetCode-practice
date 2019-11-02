@@ -215,3 +215,12 @@ $solution = new Solution\Solution();
 // $input2 = 'e';
 // $result = $solution->shortestToChar($input1, $input2);
 // var_dump($result);
+
+// $input1 = 'alice is a good girl she is a good student';
+// $input2 = 'a';
+// $input3 = 'good';
+// $input1 = 'we will we will rock you';
+// $input2 = 'we';
+// $input3 = 'will';
+// $result = $solution->findOcurrences($input1, $input2, $input3);
+// var_dump($result);

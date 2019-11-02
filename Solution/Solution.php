@@ -565,4 +565,27 @@ class Solution
         }
         return $result;
     }
+
+    /**
+     * leetCode #1078
+     * findOcurrences
+     *
+     * @param  string $text
+     * @param  string $first
+     * @param  string $second
+     *
+     * @return array
+     */
+    function findOcurrences(string $text, string $first, string $second) : array
+    {
+        $input = explode(' ', $text);
+        $result = [];
+        $length = count($input);
+        for ($i = 0; $i < $length - 2; $i++) {
+            if ($input[$i] === $first && $input[$i + 1] === $second) {
+                $result[] = $input[$i + 2];
+            }
+        }
+        return $result;
+    }
 }
