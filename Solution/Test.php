@@ -186,6 +186,15 @@ $solution = new Solution\Solution();
 // $result = $solution->divisorGame($num);
 // var_dump($result);
 
-$input = 'abbaca';
-$result = $solution->removeDuplicates($input);
-var_dump($result);
+// $input = 'abbaca';
+// $result = $solution->removeDuplicates($input);
+// var_dump($result);
+
+$input1 = [1];
+$input2 = 0;
+$input1 = [0, 10];
+$input2 = 2;
+$input1 = [1, 3, 6];
+$input2 = 3;
+$result = $solution->smallestRangeI($input1, $input2);
+var_dump($result);exit;

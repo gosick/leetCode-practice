@@ -488,7 +488,7 @@ class Solution
      * leetCode #1047
      * removeDuplicates
      *
-     * @param  mixed $s
+     * @param  string $s
      *
      * @return string
      */
@@ -503,5 +503,22 @@ class Solution
             }
         }
         return substr($s, 0, $end + 1);
+    }
+
+    /**
+     * leetCode #908
+     * smallestRangeI
+     *
+     * @param  array $A
+     * @param  int $K
+     *
+     * @return int
+     */
+    public function smallestRangeI(array $A, int $K) : int
+    {
+        $maxA = max($A);
+        $minA = min($A);
+        $difference = $maxA - $minA;
+        return max(0, $difference - 2 * $K);
     }
 }
