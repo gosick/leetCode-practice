@@ -5,6 +5,7 @@ namespace Solution;
 use Solution\TreeNode;
 use Solution\Node;
 use Solution\BinaryTree;
+use \DateTime;
 
 class Solution
 {
@@ -520,5 +521,20 @@ class Solution
         $minA = min($A);
         $difference = $maxA - $minA;
         return max(0, $difference - 2 * $K);
+    }
+
+    /**
+     * leetCode #1185
+     * dayOfTheWeek
+     *
+     * @param  int $day
+     * @param  int $month
+     * @param  int $year
+     *
+     * @return string
+     */
+    public function dayOfTheWeek(int $day, int $month, int $year) : string
+    {
+        return date('l', mktime(0, 0, 0, $month, $day, $year));
     }
 }
