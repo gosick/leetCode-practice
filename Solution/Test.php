@@ -210,3 +210,8 @@ $solution = new Solution\Solution();
 // $year = 1993;
 // $result = $solution->dayOfTheWeek($day, $month, $year);
 // var_dump($result);
+
+// $input1 = 'loveleetcode';
+// $input2 = 'e';
+// $result = $solution->shortestToChar($input1, $input2);
+// var_dump($result);

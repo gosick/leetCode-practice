@@ -537,4 +537,32 @@ class Solution
     {
         return date('l', mktime(0, 0, 0, $month, $day, $year));
     }
+
+    /**
+     * leetCode #821
+     * shortestToChar
+     *
+     * @param  string $S
+     * @param  string $C
+     *
+     * @return array
+     */
+    public function shortestToChar(string $S, string $C) : array
+    {
+        $result = [];
+        $index = [];
+        for ($i = 0; $i < strlen($S); $i++) {
+            if ($S[$i] == $C) {
+                $index[] = $i;
+            }
+        }
+        for ($j = 0; $j < strlen($S); $j++) {
+            $tmp = [];
+            foreach ($index as $pos) {
+                $tmp[] = abs($j - $pos);
+            }
+            $result[] = min($tmp);
+        }
+        return $result;
+    }
 }
