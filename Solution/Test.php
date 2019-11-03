@@ -225,6 +225,21 @@ $solution = new Solution\Solution();
 // $result = $solution->findOcurrences($input1, $input2, $input3);
 // var_dump($result);
 
-$input = ['h', 'e', 'l', 'l', 'o'];
-$solution->reverseString($input);
-var_dump($input);
+// $input = ['h', 'e', 'l', 'l', 'o'];
+// $solution->reverseString($input);
+// var_dump($input);
+
+$r = 1;
+$c = 2;
+$r0 = 0;
+$c0 = 0;
+$r = 2;
+$c = 2;
+$r0 = 0;
+$c0 = 1;
+$r = 2;
+$c = 3;
+$r0 = 1;
+$c0 = 2;
+$result = $solution->allCellsDistOrder($r, $c, $r0, $c0);
+var_dump($result);

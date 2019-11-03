@@ -597,8 +597,37 @@ class Solution
      *
      * @return void
      */
-    public function reverseString(&$s)
+    public function reverseString(string &$s)
     {
         $s = array_reverse($s);
+    }
+
+    /**
+     * leetCode #1030
+     * allCellsDistOrder
+     *
+     * @param  int $R
+     * @param  int $C
+     * @param  int $r0
+     * @param  int $c0
+     *
+     * @return array
+     */
+    public function allCellsDistOrder($R, $C, $r0, $c0) : array
+    {
+        $result = [];
+        for ($x = 0; $x < $R; $x++) {
+            for ($y = 0; $y < $C; $y++) {
+                $result[] = [$x, $y];
+            }
+        }
+
+        usort($result, function ($item1, $item2) use ($r0, $c0) {
+            $d1 = abs($r0 -$item1[0]) + abs($c0 - $item1[1]);
+            $d2 = abs($r0 - $item2[0]) + abs($c0 - $item2[1]);
+            return $d1 <=> $d2;
+        });
+
+        return $result;
     }
 }
