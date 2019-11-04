@@ -630,4 +630,27 @@ class Solution
 
         return $result;
     }
+
+    /**
+     * leetCode #872
+     * leafSimilar
+     *
+     * @param  TreeNode $root1
+     * @param  TreeNode $root2
+     *
+     * @return bool
+     */
+    public function leafSimilar(TreeNode $root1, TreeNode $root2) : bool
+    {
+        $tree1 = new BinaryTree();
+        $tree1->root = $root1;
+        $tree2 = new BinaryTree();
+        $tree2->root = $root2;
+
+        $result1 = [];
+        $result2 = [];
+        $tree1->preOrder($result1, $root1);
+        $tree2->preOrder($result2, $root2);
+        return $result1 === $result2;
+    }
 }

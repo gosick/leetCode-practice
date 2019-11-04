@@ -132,4 +132,16 @@ class BinaryTree
         
         return $node;
     }
+
+    public function preOrder(array &$result, TreeNode $root = null)
+    {
+        if ($root !== null) {
+            
+            if ($root->left === null && $root->right === null) {
+                $result[] = $root->val;
+            }
+            $this->preOrder($result, $root->left);
+            $this->preOrder($result, $root->right);
+        }
+    }
 }
