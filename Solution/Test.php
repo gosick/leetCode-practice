@@ -254,3 +254,17 @@ $solution = new Solution\Solution();
 // $tree2 = new Solution\BinaryTree($node2);
 // $result = $solution->leafSimilar($tree1->root, $tree2->root);
 // var_dump($result);
+
+// $input = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ];
+
+// $input = [
+//     [1, 2, 3],
+//     [4, 5, 6]
+// ];
+
+// $result = $solution->transpose($input);
+// var_dump($result);

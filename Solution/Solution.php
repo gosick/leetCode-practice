@@ -653,4 +653,25 @@ class Solution
         $tree2->preOrder($result2, $root2);
         return $result1 === $result2;
     }
+    
+    /**
+     * leetCode #867
+     * transpose
+     *
+     * @param  array $A
+     *
+     * @return array
+     */
+    public function transpose(array $A) : array
+    {
+        $n = count($A);
+        $n1 = count($A[0]);
+        $result = [];
+        for ($i = 0; $i < $n1; $i++) {
+            for ($j = 0; $j < $n; $j++) {
+                $result[$i][$j] = $A[$j][$i];
+            }
+        }
+        return $result;
+    }
 }
