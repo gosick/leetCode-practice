@@ -268,3 +268,14 @@ $solution = new Solution\Solution();
 
 // $result = $solution->transpose($input);
 // var_dump($result);
+
+// $input = [
+//     'abcd',
+//     'cdab',
+//     'cbad',
+//     'xyzz',
+//     'zzxy',
+//     'zzyx'
+// ];
+// $result = $solution->numSpecialEquivGroups($input);
+// var_dump($result);

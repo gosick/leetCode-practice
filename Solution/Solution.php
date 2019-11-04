@@ -674,4 +674,31 @@ class Solution
         }
         return $result;
     }
+
+    /**
+     * leetCode #893
+     * numSpecialEquivGroups
+     *
+     * @param  array $A
+     *
+     * @return int
+     */
+    public function numSpecialEquivGroups(array $A) : int
+    {
+        $result = array_map(function ($item) {
+            $init = array_fill(97, 56, 0);
+            for ($i = 0; $i < strlen($item); $i++) {
+                if ($i & 1) {
+                    $init[ord($item[$i]) + 26]++;
+                } else {
+                    $init[ord($item[$i])]++;
+                }
+            }
+            return implode($init);
+        }, $A);
+
+        return count(array_unique($result));
+    }
+
+    
 }
