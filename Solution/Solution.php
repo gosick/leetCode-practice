@@ -747,7 +747,7 @@ class Solution
      * leetCode #147
      * insertionSortList
      *
-     * @param  mixed $head
+     * @param  ListNode $head
      *
      * @return ListNode
      */
@@ -777,5 +777,26 @@ class Solution
         }
 
         return $node->next;
+    }
+
+    /**
+     * leetCode #1217
+     * minCostToMoveChips
+     *
+     * @param  array $chips
+     *
+     * @return int
+     */
+    public function minCostToMoveChips(array $chips) : int
+    {
+        $odd = $even = 0;
+        for ($i = 0; $i < count($chips); $i++) {
+            if ($chips[$i] % 2 === 0) {
+                $even++;
+            } else {
+                $odd++;
+            }
+        }
+        return min($odd, $even);
     }
 }

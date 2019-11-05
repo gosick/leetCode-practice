@@ -298,3 +298,7 @@ $solution = new Solution\Solution();
 // $list->root = $result;
 // $result = $list->convertToArray();
 // var_dump($result);
+
+// $input = [2, 2, 2, 3, 3];
+// $result = $solution->minCostToMoveChips($input);
+// var_dump($result);
