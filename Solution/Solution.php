@@ -728,4 +728,18 @@ class Solution
 
         return [$newLine, $count];
     }
+
+    /**
+     * leetCode #912
+     * sortArray
+     *
+     * @param  mixed $nums
+     *
+     * @return array
+     */
+    public function sortArray(array $nums) : array
+    {
+        sort($nums);
+        return $nums;
+    }
 }

@@ -286,3 +286,8 @@ $solution = new Solution\Solution();
 // $input2 = 'bbbcccdddaaa';
 // $result = $solution->numbersOfLines($input1, $input2);
 // var_dump($result);
+
+// $nums = [5, 2, 3, 1];
+// $nums = [5, 1, 1, 2, 0, 0];
+// $result = $solution->sortArray($nums);
+// var_dump($result);
