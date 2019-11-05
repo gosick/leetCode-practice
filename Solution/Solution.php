@@ -5,7 +5,7 @@ namespace Solution;
 use Solution\TreeNode;
 use Solution\Node;
 use Solution\BinaryTree;
-use \DateTime;
+use Solution\ListNode;
 
 class Solution
 {
@@ -741,5 +741,41 @@ class Solution
     {
         sort($nums);
         return $nums;
+    }
+
+    /**
+     * leetCode #147
+     * insertionSortList
+     *
+     * @param  mixed $head
+     *
+     * @return ListNode
+     */
+    public function insertionSortList(ListNode $head) : ListNode
+    {
+        $node = new ListNode(0);
+        $node->next = $head;
+        $pre = $node;
+        $current = $head;
+        while ($current) {
+            if ($current->next === null) {
+                break;
+            }
+            
+            if ($current->val > $current->next->val) {
+                while (($pre->next) && ($pre->next->val < $current->next->val)) {
+                    $pre = $pre->next;
+                }
+                $temp = $pre->next;
+                $pre->next = $current->next;
+                $current->next = $current->next->next;
+                $pre->next->next = $temp;
+                $pre = $node;
+            } else {
+                $current = $current->next;
+            }
+        }
+
+        return $node->next;
     }
 }

@@ -291,3 +291,10 @@ $solution = new Solution\Solution();
 // $nums = [5, 1, 1, 2, 0, 0];
 // $result = $solution->sortArray($nums);
 // var_dump($result);
+
+// $input = [4, 2, 1, 3];
+// $list = new Solution\Lists($input);
+// $result = $solution->insertionSortList($list->root);
+// $list->root = $result;
+// $result = $list->convertToArray();
+// var_dump($result);
