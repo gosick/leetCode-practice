@@ -279,3 +279,10 @@ $solution = new Solution\Solution();
 // ];
 // $result = $solution->numSpecialEquivGroups($input);
 // var_dump($result);
+
+// $input1 = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+// $input2 = 'abcdefghijklmnopqrstuvwxyz';
+// $input1 = [4, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+// $input2 = 'bbbcccdddaaa';
+// $result = $solution->numbersOfLines($input1, $input2);
+// var_dump($result);

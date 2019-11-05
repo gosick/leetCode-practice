@@ -700,5 +700,32 @@ class Solution
         return count(array_unique($result));
     }
 
-    
+    /**
+     * leetCode #806
+     * numbersOfLines
+     *
+     * @param  array $widths
+     * @param  string $S
+     *
+     * @return array
+     */
+    public function numbersOfLines(array $widths, string $S) : array
+    {
+        $count = 0;
+        $newLine = 1;
+        for ($i = 0; $i < strlen($S); $i++) {
+            $width = $widths[ord($S[$i]) - 97];
+            $count += $width;
+
+            if ($count === 100) {
+                $count = 0;
+                $newLine++;
+            } elseif ($count > 100) {
+                $count = $width;
+                $newLine++;
+            }
+        }
+
+        return [$newLine, $count];
+    }
 }
